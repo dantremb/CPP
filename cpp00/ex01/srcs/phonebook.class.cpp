@@ -6,12 +6,11 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:45 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/22 01:55:35 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/22 02:08:53 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.class.hpp"
-
 
 PhoneBook::PhoneBook(void) : _max_contacts(8), _nb_contacts(0)
 {
@@ -80,10 +79,13 @@ void PhoneBook::_search_contact(void)
 	for (int i = 0 ; i != this->_nb_contacts ; i++)
 		this->_contacts[i].print_preview(i + 1);
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
-	std::cout << "Search > ";
-	std::getline(std::cin, buffer);
+	while (std::isdigit(buffer[0]) == 0)
+	{
+		std::cout << "Search > ";
+		std::getline(std::cin, buffer);
+	}
 	index = std::stoi(buffer);
-	if (index <= this->_nb_contacts && index >= 0)
+	if (index <= this->_nb_contacts && index > 0)
 		this->_contacts[index - 1].print_contact();
 	else
 		std::cout << "Contact not found" << std::endl;
