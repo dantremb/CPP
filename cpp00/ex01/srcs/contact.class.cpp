@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:38 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 22:39:04 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/21 22:52:36 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,12 @@ void Contact::_set_darkest_secret(std::string darkest_secret)
 	this->_darkest_secret = darkest_secret;
 }
 
-void Contact::print_preview(void) const
+void Contact::print_preview(int index) const
 {
-	std::cout << this->_get_first_name() << " | " << this->_get_last_name() << " | " << this->_get_nickname() << " |" << std::endl;
+	std::cout << "| " << index << " | ";
+	std::cout << this->_get_first_name() << " | ";
+	std::cout << this->_get_last_name() << " | " ;
+	std::cout << this->_get_nickname() << " |" << std::endl;
 	return ;
 }
 

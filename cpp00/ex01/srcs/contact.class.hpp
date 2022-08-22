@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:40 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 22:21:40 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/21 23:13:55 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	
 	// Function to manage the contact
 	void		create_contact(void);
-	void		print_preview(void) const;
+	void		print_preview(int index) const;
 	void		print_contact(void) const;
 	
 private:

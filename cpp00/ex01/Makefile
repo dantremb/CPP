@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/08/21 21:56:31 by dantremb         ###   ########.fr        #
+#    Updated: 2022/08/21 23:27:47 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@
 NAME = phonebook
 
 # Flags
-CFLAGS = -Wall -Wextra -Werror  -std=c++98
+CFLAGS = -Wall -Wextra -Werror #-std=c++98
 CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = phonebook.cpp contact.class.cpp phonebook.class.cpp
+SRCS_FILES = phonebook.cpp phonebook.class.cpp contact.class.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion

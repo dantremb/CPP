@@ -6,13 +6,12 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:58:26 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 21:59:49 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/21 23:25:55 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
-# include <iostream>
 # include "contact.class.hpp"
 
 class PhoneBook
