@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:58:26 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 23:25:55 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/22 01:56:58 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ private:
 	// Private functions to manage the contacts
 	void		_add_contact(void);
 	void		_search_contact(void);
+	
 };
 
 #endif

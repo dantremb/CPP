@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:38 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 22:52:36 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/22 01:13:32 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,66 +49,104 @@ std::string Contact::_get_darkest_secret(void) const
 	return (this->_darkest_secret);
 }
 
-void Contact::_set_first_name(std::string first_name)
+void Contact::_set_first_name(void)
 {
-	this->_first_name = first_name;
+	std::string buffer;
+
+	while (buffer.size() <= 0)
+	{
+		std::cout << "PhoneBook >    First name : ";
+		std::getline(std::cin, buffer);
+	}
+	this->_first_name = buffer;
 }
 
-void Contact::_set_last_name(std::string last_name)
+void Contact::_set_last_name(void)
 {
-	this->_last_name = last_name;
+	std::string buffer;
+
+	while (buffer.size() <= 0)
+	{
+		std::cout << "PhoneBook >     Last name : ";
+		std::getline(std::cin, buffer);
+	}
+	this->_last_name = buffer;
 }
 
-void Contact::_set_nickname(std::string nickname)
+void Contact::_set_nickname(void)
 {
-	this->_nickname = nickname;
+	std::string buffer;
+
+	while (buffer.size() <= 0)
+	{
+		std::cout << "PhoneBook >      Nickname : ";
+		std::getline(std::cin, buffer);
+	}
+	this->_nickname = buffer;
 }
 
-void Contact::_set_phone_number(std::string phone_number)
+void Contact::_set_phone_number(void)
 {
-	this->_phone_number = phone_number;
+	std::string buffer;
+
+	while (buffer.size() <= 0)
+	{
+		std::cout << "PhoneBook >  Phone Number : ";
+		std::getline(std::cin, buffer);
+	}
+	this->_phone_number = buffer;
 }
 
-void Contact::_set_darkest_secret(std::string darkest_secret)
+void Contact::_set_darkest_secret(void)
 {
-	this->_darkest_secret = darkest_secret;
+	std::string buffer;
+
+	while (buffer.size() <= 0)
+	{
+		std::cout << "PhoneBook > Darkest Secret: ";
+		std::getline(std::cin, buffer);
+	}
+	this->_darkest_secret = buffer;
+}
+
+std::string Contact::_truncate(std::string str) const
+{
+	std::string temp = str;
+	
+	if (temp.size() > 10)
+		return (temp.substr(0, 9) + ".");
+	return (temp);
 }
 
 void Contact::print_preview(int index) const
 {
-	std::cout << "| " << index << " | ";
-	std::cout << this->_get_first_name() << " | ";
-	std::cout << this->_get_last_name() << " | " ;
-	std::cout << this->_get_nickname() << " |" << std::endl;
+	std::cout << "|";
+	std::cout.width(10);
+	std::cout << index << "|";
+	std::cout.width(10);
+	std::cout << this->_truncate(this->_first_name) << "|";
+	std::cout.width(10);
+	std::cout << this->_truncate(this->_last_name) << "|";
+	std::cout.width(10);
+	std::cout << this->_truncate(this->_nickname) << "|";
+	std::cout << std::endl;
 	return ;
 }
 
 void Contact::print_contact(void) const
 {
-	std::cout << "First name: " << this->_first_name << std::endl;
-	std::cout << "Last name: " << this->_last_name << std::endl;
-	std::cout << "Nickname: " << this->_nickname << std::endl;
-	std::cout << "Phone number: " << this->_phone_number << std::endl;
+	std::cout << "    First name: " << this->_first_name << std::endl;
+	std::cout << "     Last name: " << this->_last_name << std::endl;
+	std::cout << "      Nickname: " << this->_nickname << std::endl;
+	std::cout << "  Phone number: " << this->_phone_number << std::endl;
 	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
 
 void Contact::create_contact(void)
 {
-	std::string buffer;
-
-	std::cout << "First name: ";
-	std::getline(std::cin, buffer);
-	this->_set_first_name(buffer);
-	std::cout << "Last name: ";
-	std::getline(std::cin, buffer);
-	this->_set_last_name(buffer);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, buffer);
-	this->_set_nickname(buffer);
-	std::cout << "Phone number: ";
-	std::getline(std::cin, buffer);
-	this->_set_phone_number(buffer);
-	std::cout << "Darkest secret: ";
-	std::getline(std::cin, buffer);
-	this->_set_darkest_secret(buffer);
+	this->_set_first_name();
+	this->_set_last_name();
+	this->_set_nickname();
+	this->_set_phone_number();
+	this->_set_darkest_secret();
 }

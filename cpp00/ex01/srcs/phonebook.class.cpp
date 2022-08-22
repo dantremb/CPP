@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:45 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/21 23:12:34 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/08/22 01:55:35 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void PhoneBook::open_phonebook(void)
 {
 	std::string	buffer;
 	
+	std::cout << "_____________________________________________" << std::endl;
+	std::cout << "|                                           |" << std::endl;
+	std::cout << "|            DANTREMB   PHONEBOOK           |" << std::endl;
+	std::cout << "|___________________________________________|" << std::endl;
+	std::cout << "|                                           |" << std::endl;
+	std::cout << "|      [ADD]      [SEARCH]      [EXIT]      |" << std::endl;
+	std::cout << "|___________________________________________|" << std::endl;
 	while (1)
 	{
 		std::cout << "PhoneBook > ";
@@ -46,29 +53,38 @@ void PhoneBook::open_phonebook(void)
 
 void PhoneBook::_add_contact(void)
 {
-	if (this->_nb_contacts == this->_max_contacts - 1)
-		std::cout << "Phonebook is full, last entry will be ovewrite" << std::endl;
-	this->_contacts[_nb_contacts].create_contact();
-	if (this->_nb_contacts < this->_max_contacts - 1)
-		this->_nb_contacts++;
+	int i = -1;
+	
+	this->_nb_contacts++;
+	if (this->_nb_contacts > this->_max_contacts)
+	{
+		while (++i < 7)
+			this->_contacts[i] = this->_contacts[i + 1];
+		this->_nb_contacts--;
+	}
+	this->_contacts[_nb_contacts - 1].create_contact();
 }
 
 void PhoneBook::_search_contact(void)
 {
 	std::string	buffer;
-	int i = -1;
+	int index = -1;
 	if (this->_nb_contacts == 0)
 	{
 		std::cout << "Phonebook is empty" << std::endl;
 		return ;
 	}
-	for (int i = 0 ; i < this->_nb_contacts ; i++)
-		this->_contacts[i].print_preview(i);
+	std::cout << "_____________________________________________" << std::endl;
+	std::cout << "|     Index| FirstName|  LastName|  NickName|" << std::endl;
+	std::cout << "|__________|__________|__________|__________|" << std::endl;
+	for (int i = 0 ; i != this->_nb_contacts ; i++)
+		this->_contacts[i].print_preview(i + 1);
+	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	std::cout << "Search > ";
 	std::getline(std::cin, buffer);
-	i = std::stoi(buffer);
-	if (i <= this->_nb_contacts && i >= 0)
-		this->_contacts[i].print_contact();
+	index = std::stoi(buffer);
+	if (index <= this->_nb_contacts && index >= 0)
+		this->_contacts[index - 1].print_contact();
 	else
 		std::cout << "Contact not found" << std::endl;
 	
