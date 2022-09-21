@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 20:02:50 by dantremb          #+#    #+#             */
-/*   Updated: 2022/09/20 23:48:58 by dantremb         ###   ########.fr       */
+/*   Created: 2022/08/19 21:58:26 by dantremb          #+#    #+#             */
+/*   Updated: 2022/09/20 23:45:43 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.class.hpp"
+#ifndef ZOMBIE_CLASS_HPP
+# define ZOMBIE_CLASS_HPP
+# include <iostream>
 
-Zombie*	newZombie(std::string name){
-	Zombie	*zombie;
+class Zombie
+{
+public:
 
-	zombie = new Zombie();
-	zombie->setName(name);
-	return (zombie);
-}
+	// Constructors and destructors
+	Zombie(void);
+	~Zombie(void);
+
+	// Use to annonce the zombie to STDOUT
+	void		announce(void);
+	// Use to set the zombie name
+	void		setName(std::string name);
+	
+private:
+
+	// Zombie's name
+	std::string _name;
+
+};
+
+#endif

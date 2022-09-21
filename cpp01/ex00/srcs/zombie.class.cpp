@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Zombie.hpp                                        :+:      :+:    :+:   */
+/*   zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 21:58:26 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/22 08:15:15 by dantremb         ###   ########.fr       */
+/*   Created: 2022/08/21 18:26:45 by dantremb          #+#    #+#             */
+/*   Updated: 2022/09/21 00:17:29 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "zombie.class.hpp"
 
-class Zombie
-{
-	
-public:
+Zombie::Zombie(void){
+	//std::cout << "Create a zombie" << std::endl;
+	return;
+}
 
-	// Constructors and destructors
+Zombie::~Zombie(void){
+	//std::cout << "kill " << this->_name << " the zombie!" << std::endl;
+	return;
+}
 
+void	Zombie::announce(void){
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-private:
-
-	
-};
-
-#endif
+void	Zombie::setName(std::string name){
+	this->_name = name;
+}

@@ -6,12 +6,12 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/09/20 23:54:05 by dantremb         ###   ########.fr        #
+#    Updated: 2022/09/21 00:20:37 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Nom du Projet
-NAME = Zombie
+NAME = a.out
 
 # Flags
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -19,7 +19,7 @@ CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp zombie.class.cpp newZombie.cpp randomChump.cpp
+SRCS_FILES = main.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion

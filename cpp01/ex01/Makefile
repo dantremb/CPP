@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/09/20 23:54:05 by dantremb         ###   ########.fr        #
+#    Updated: 2022/09/20 23:57:56 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp zombie.class.cpp newZombie.cpp randomChump.cpp
+SRCS_FILES = main.cpp zombie.class.cpp zombieHorde.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
