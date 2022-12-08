@@ -6,26 +6,21 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:45 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/22 02:08:53 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:38:29 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.class.hpp"
 
-PhoneBook::PhoneBook(void) : _max_contacts(8), _nb_contacts(0)
-{
+PhoneBook::PhoneBook(void) : _max_contacts(8), _nb_contacts(0){
 	//std::cout << "Phonebook created" << std::endl;
-	return ;
 }
 
-PhoneBook::~PhoneBook(void)
-{
+PhoneBook::~PhoneBook(void){
 	//std::cout << "Phonebook destroyed" << std::endl;
-	return ;
 }
 
-void PhoneBook::open_phonebook(void)
-{
+void PhoneBook::open_phonebook(void){
 	std::string	buffer;
 	
 	std::cout << "_____________________________________________" << std::endl;
@@ -50,8 +45,7 @@ void PhoneBook::open_phonebook(void)
 	}
 }
 
-void PhoneBook::_add_contact(void)
-{
+void PhoneBook::_add_contact(void){
 	int i = -1;
 	
 	this->_nb_contacts++;
@@ -64,8 +58,7 @@ void PhoneBook::_add_contact(void)
 	this->_contacts[_nb_contacts - 1].create_contact();
 }
 
-void PhoneBook::_search_contact(void)
-{
+void PhoneBook::_search_contact(void){
 	std::string	buffer;
 	int index = -1;
 	if (this->_nb_contacts == 0)
@@ -89,5 +82,4 @@ void PhoneBook::_search_contact(void)
 		this->_contacts[index - 1].print_contact();
 	else
 		std::cout << "Contact not found" << std::endl;
-	
 }

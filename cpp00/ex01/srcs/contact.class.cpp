@@ -6,51 +6,41 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:26:38 by dantremb          #+#    #+#             */
-/*   Updated: 2022/08/22 01:13:32 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:38:10 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.class.hpp"
 
-Contact::Contact(void)
-{
+Contact::Contact(void){
 	//std::cout << "Contact created" << std::endl;
-	return ;
 }
 
-Contact::~Contact(void)
-{
+Contact::~Contact(void){
 	//std::cout << "Contact destroyed" << std::endl;
-	return ;
 }
 
-std::string Contact::_get_first_name(void) const
-{
+std::string Contact::_get_first_name(void) const{
 	return (this->_first_name);
 }
 
-std::string Contact::_get_last_name(void) const
-{
+std::string Contact::_get_last_name(void) const{
 	return (this->_last_name);
 }
 
-std::string Contact::_get_nickname(void) const
-{
+std::string Contact::_get_nickname(void) const{
 	return (this->_nickname);
 }
 
-std::string Contact::_get_phone_number(void) const
-{
+std::string Contact::_get_phone_number(void) const{
 	return (this->_phone_number);
 }
 
-std::string Contact::_get_darkest_secret(void) const
-{
+std::string Contact::_get_darkest_secret(void) const{
 	return (this->_darkest_secret);
 }
 
-void Contact::_set_first_name(void)
-{
+void Contact::_set_first_name(void){
 	std::string buffer;
 
 	while (buffer.size() <= 0)
@@ -61,8 +51,7 @@ void Contact::_set_first_name(void)
 	this->_first_name = buffer;
 }
 
-void Contact::_set_last_name(void)
-{
+void Contact::_set_last_name(void){
 	std::string buffer;
 
 	while (buffer.size() <= 0)
@@ -73,8 +62,7 @@ void Contact::_set_last_name(void)
 	this->_last_name = buffer;
 }
 
-void Contact::_set_nickname(void)
-{
+void Contact::_set_nickname(void){
 	std::string buffer;
 
 	while (buffer.size() <= 0)
@@ -85,8 +73,7 @@ void Contact::_set_nickname(void)
 	this->_nickname = buffer;
 }
 
-void Contact::_set_phone_number(void)
-{
+void Contact::_set_phone_number(void){
 	std::string buffer;
 
 	while (buffer.size() <= 0)
@@ -97,8 +84,7 @@ void Contact::_set_phone_number(void)
 	this->_phone_number = buffer;
 }
 
-void Contact::_set_darkest_secret(void)
-{
+void Contact::_set_darkest_secret(void){
 	std::string buffer;
 
 	while (buffer.size() <= 0)
@@ -109,8 +95,7 @@ void Contact::_set_darkest_secret(void)
 	this->_darkest_secret = buffer;
 }
 
-std::string Contact::_truncate(std::string str) const
-{
+std::string Contact::_truncate(std::string str) const{
 	std::string temp = str;
 	
 	if (temp.size() > 10)
@@ -118,8 +103,7 @@ std::string Contact::_truncate(std::string str) const
 	return (temp);
 }
 
-void Contact::print_preview(int index) const
-{
+void Contact::print_preview(int index) const{
 	std::cout << "|";
 	std::cout.width(10);
 	std::cout << index << "|";
@@ -133,8 +117,7 @@ void Contact::print_preview(int index) const
 	return ;
 }
 
-void Contact::print_contact(void) const
-{
+void Contact::print_contact(void) const{
 	std::cout << "    First name: " << this->_first_name << std::endl;
 	std::cout << "     Last name: " << this->_last_name << std::endl;
 	std::cout << "      Nickname: " << this->_nickname << std::endl;
@@ -142,8 +125,7 @@ void Contact::print_contact(void) const
 	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
 
-void Contact::create_contact(void)
-{
+void Contact::create_contact(void){
 	this->_set_first_name();
 	this->_set_last_name();
 	this->_set_nickname();

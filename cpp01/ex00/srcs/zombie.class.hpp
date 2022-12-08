@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:58:26 by dantremb          #+#    #+#             */
-/*   Updated: 2022/09/20 23:45:43 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:49:55 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ class Zombie
 public:
 
 	// Constructors and destructors
-	Zombie(void);
+	Zombie(std::string init_name);
 	~Zombie(void);
 
 	// Use to annonce the zombie to STDOUT
 	void		announce(void);
-	// Use to set the zombie name
-	void		setName(std::string name);
 	
 private:
 
