@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/12/08 14:35:28 by dantremb         ###   ########.fr        #
+#    Updated: 2022/12/08 15:23:25 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = a.out
 
 # Flags
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 CC = clang++
 
 # Sources files
