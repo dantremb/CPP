@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/12/08 15:23:25 by dantremb         ###   ########.fr        #
+#    Updated: 2022/12/08 20:38:38 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp
+SRCS_FILES = main.cpp Harl.class.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
@@ -70,3 +70,13 @@ signature:
 	@echo "\n$G+---+---+---+---+---+---+---+---+"
 	@echo "$G|$C	$(NAME) by Dantremb	$G|"
 	@echo "$G+---+---+---+---+---+---+---+---+"
+
+test:
+	@echo "----- TESTING ----- DEBUG -----"
+	@./a.out DEBUG
+	@echo "----- TESTING ----- INFO -----"
+	@./a.out INFO
+	@echo "----- TESTING ----- WARNING -----"
+	@./a.out WARNING
+	@echo "----- TESTING ----- ERROR -----"
+	@./a.out ERROR
