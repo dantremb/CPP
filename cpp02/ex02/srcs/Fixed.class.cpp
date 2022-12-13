@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:23:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/12 13:27:46 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/12 22:37:18 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,11 +119,6 @@ float Fixed::toFloat(void) const {
 	return (float)this->_value / (float)(1 << _bits);
 }
 
-std::ostream &operator<<(std::ostream &out, Fixed const &nbr) {
-	out << nbr.toFloat();
-	return out;
-}
-
 Fixed& Fixed::min(Fixed &a, Fixed& b){
 	return (a < b ? a:b);
 }
@@ -138,4 +133,9 @@ const Fixed& Fixed::min(const Fixed &a, const Fixed& b){
 
 const Fixed& Fixed::max(const Fixed &a, const Fixed& b){
 	return (a > b ? a:b);
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &nbr) {
+	out << nbr.toFloat();
+	return out;
 }

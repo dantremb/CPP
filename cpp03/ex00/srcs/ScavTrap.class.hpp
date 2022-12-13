@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/12 22:35:55 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/11 10:23:25 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/12 23:59:31 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
-#include <iostream>
+#ifndef SCAVTRAP_CLASS_HPP
+# define SCAVTRAP_CLASS_HPP
 
-int main( void )
+#include "ClapTrap.class.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	return 0;
-}
+private:
+		
+public:
+
+	ScavTrap(void);
+	ScavTrap(const ScavTrap &newValue);
+	ScavTrap(std::string name);
+	~ScavTrap(void);
+
+	ScavTrap	&operator=(const ScavTrap &newValue);
+
+
+
+};
+
+#endif
