@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/14 07:25:09 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/15 15:30:30 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/15 16:06:11 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
+#ifndef CAT_CLASS_HPP
+# define CAT_CLASS_HPP
+
 #include <iostream>
+#include "Animal.class.hpp"
 
-int main( void )
-{
-	ClapTrap	karl;
-	ClapTrap	steven("steven");
+class Cat : public Animal
+{	
+public:
 
-	karl.attack("steven");
-	steven.takeDamage(2);
-	steven.attack("dummie");
-	karl.takeDamage(9);
-	karl.beRepaired(3);
-	karl.takeDamage(4);
-	karl.attack("steven");
+	Cat(void);
+	Cat(const Cat &src);
+	~Cat(void);
 
-	return (0);
-}
+	Cat		&operator=(const Cat &src);
+
+};
+
+#endif

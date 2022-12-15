@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:23:25 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/12 23:59:31 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:30:36 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_CLASS_HPP
-# define SCAVTRAP_CLASS_HPP
+#ifndef FRAGTRAP_CLASS_HPP
+# define FRAGTRAP_CLASS_HPP
 
 #include "ClapTrap.class.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 private:
-		
+
 public:
 
-	ScavTrap(void);
-	ScavTrap(const ScavTrap &newValue);
-	ScavTrap(std::string name);
-	~ScavTrap(void);
+	FragTrap(void);
+	FragTrap(const FragTrap &newValue);
+	FragTrap(const std::string name);
+	~FragTrap(void);
 
-	ScavTrap	&operator=(const ScavTrap &newValue);
+	FragTrap&	operator=(const FragTrap &newValue);
 
-
+	void	highFivesGuys(void) const;
 
 };
 

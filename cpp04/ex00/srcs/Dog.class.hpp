@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/14 07:25:09 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/15 15:30:31 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/15 16:14:10 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
+#ifndef DOG_CLASS_HPP
+# define DOG_CLASS_HPP
+
 #include <iostream>
+#include "Animal.class.hpp"
 
-int main( void )
+class Dog : public Animal
 {
-	ClapTrap	karl;
-	ClapTrap	steven("steven");
+public:
 
-	karl.attack("steven");
-	steven.takeDamage(2);
-	steven.attack("dummie");
-	karl.takeDamage(9);
-	karl.beRepaired(3);
-	karl.takeDamage(4);
-	karl.attack("steven");
+	Dog(void);
+	Dog(std::string type);
+	Dog(const Dog &src);
+	~Dog(void);
 
-	return (0);
-}
+	Dog		&operator=(const Dog &src);
+
+};
+
+#endif

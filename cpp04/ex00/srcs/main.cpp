@@ -5,26 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/14 07:25:09 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/15 15:30:46 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/15 16:01:51 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
-#include <iostream>
+#include "Cat.class.hpp"
+#include "Dog.class.hpp"
 
-int main( void )
+int main(void)
 {
-	ClapTrap	karl;
-	ClapTrap	steven("steven");
-
-	karl.attack("steven");
-	steven.takeDamage(2);
-	steven.attack("dummie");
-	karl.takeDamage(9);
-	karl.beRepaired(3);
-	karl.takeDamage(4);
-	karl.attack("steven");
-
-	return (0);
+	Cat cat;
 }

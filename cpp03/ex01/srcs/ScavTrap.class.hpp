@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/14 07:25:09 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/11 10:23:25 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/15 14:01:41 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_CLASS_HPP
+# define SCAVTRAP_CLASS_HPP
+
 #include "ClapTrap.class.hpp"
-#include <iostream>
 
-int main( void )
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	karl;
-	ClapTrap	steven("steven");
+private:
 
-	karl.attack("steven");
-	steven.takeDamage(2);
-	steven.attack("dummie");
-	karl.takeDamage(9);
-	karl.beRepaired(3);
-	karl.takeDamage(4);
-	karl.attack("steven");
+public:
 
-	return (0);
-}
+	ScavTrap(void);
+	ScavTrap(const ScavTrap &newValue);
+	ScavTrap(const std::string name);
+	~ScavTrap(void);
+
+	ScavTrap&	operator=(const ScavTrap &newValue);
+
+	void	guardGate(void) const;
+
+};
+
+#endif

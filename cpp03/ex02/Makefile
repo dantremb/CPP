@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/12/14 06:49:43 by dantremb         ###   ########.fr        #
+#    Updated: 2022/12/15 14:24:44 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp ClapTrap.class.cpp
+SRCS_FILES = main.cpp ClapTrap.class.cpp ScavTrap.class.cpp FragTrap.class.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion

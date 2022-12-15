@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 10:23:22 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/14 07:25:09 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/15 15:30:44 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/15 16:05:44 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
+#ifndef ANIMAL_CLASS_HPP
+# define ANIMAL_CLASS_HPP
+
 #include <iostream>
 
-int main( void )
+class Animal
 {
-	ClapTrap	karl;
-	ClapTrap	steven("steven");
+	protected:
 
-	karl.attack("steven");
-	steven.takeDamage(2);
-	steven.attack("dummie");
-	karl.takeDamage(9);
-	karl.beRepaired(3);
-	karl.takeDamage(4);
-	karl.attack("steven");
+		std::string	_type;
+		
+	public:
+	
+		Animal(void);
+		Animal(Animal const &src);
+		virtual ~Animal(void);
 
-	return (0);
-}
+		Animal		&operator=(Animal const & src);
+
+		void		makeSound(void) const;
+
+};
+
+#endif
