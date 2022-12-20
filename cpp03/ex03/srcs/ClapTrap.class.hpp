@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:23:25 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/19 15:35:24 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:14:32 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 
 	ClapTrap		&operator=(const ClapTrap &newValue);
 
+	std::string		getName(void) const;
 	unsigned int	getHitPoints(void) const;
 	unsigned int	getEnergyPoints(void) const;
 	unsigned int	getAttackDamage(void) const;
