@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.class.hpp                                      :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 15:30:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/15 16:06:11 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/15 15:30:31 by dantremb          #+#    #+#             */
+/*   Updated: 2022/12/20 21:58:29 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_CLASS_HPP
-# define CAT_CLASS_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
-#include "Animal.class.hpp"
+#include "Animal.hpp"
 
-class Cat : public Animal
-{	
+class Dog : public Animal
+{
 public:
 
-	Cat(void);
-	Cat(const Cat &src);
-	~Cat(void);
+	Dog(void);
+	Dog(std::string type);
+	Dog(const Dog &src);
+	virtual ~Dog(void);
 
-	Cat		&operator=(const Cat &src);
+	Dog		&operator=(const Dog &src);
 
+	std::string			getType(void) const;
+	virtual void		makeSound(void) const;
 };
 
 #endif

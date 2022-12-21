@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.cpp                                   :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:30:41 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/15 16:11:47 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/12/20 21:25:22 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.class.hpp"
+#include "Animal.hpp"
 
 Animal::Animal(void) : _type("Unknow") {
 	std::cout << "Animal default constructor called" << std::endl;
@@ -37,6 +37,10 @@ Animal &Animal::operator=(Animal const &src) {
 	std::cout << "Animal assignation operator called" << std::endl;
 	this->_type = src._type;
 	return *this;
+}
+
+std::string Animal::getType(void) const {
+	return this->_type;
 }
 
 void Animal::makeSound(void) const {

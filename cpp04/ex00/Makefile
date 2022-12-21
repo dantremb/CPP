@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/12/15 15:56:49 by dantremb         ###   ########.fr        #
+#    Updated: 2022/12/20 21:33:57 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp Animal.class.cpp Dog.class.cpp Cat.class.cpp
+SRCS_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
