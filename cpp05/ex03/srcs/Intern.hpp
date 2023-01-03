@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 09:16:45 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/03 09:31:53 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/03 09:59:47 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/03 10:12:04 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#ifndef SHRUBBERYCREATIONFORM_H
-# define SHRUBBERYCREATIONFORM_H
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
-# include <fstream>
 # include "Form.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "ShrubberyCreationForm.hpp"
 
-class ShrubberyCreationForm: public Form {
+class Intern
+{
+	public:
+		Intern();
+		Intern(const Intern&);
+		virtual ~Intern();
+		Intern &operator=(const Intern& src);
+
+		Form *makeForm(std::string name, std::string target);
 	
-public:
-
-		ShrubberyCreationForm();
-        ShrubberyCreationForm(const ShrubberyCreationForm&);
-		ShrubberyCreationForm(const std::string target);
-        virtual ~ShrubberyCreationForm();
-        ShrubberyCreationForm &operator=(const ShrubberyCreationForm&);
+	private:
 		
-		virtual void execute(Bureaucrat const & user) const;
+		std::string _form[3];
 };
 
 #endif
