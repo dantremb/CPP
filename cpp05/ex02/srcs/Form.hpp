@@ -5,49 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 18:22:49 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/02 21:46:00 by dantremb         ###   ########.fr       */
+/*   Created: 2022/02/07 14:09:48 by gcollet           #+#    #+#             */
+/*   Updated: 2023/01/02 23:49:14 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef __FORM_H__
+#define __FORM_H__
 
-# include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
-class Form
-{
+class Bureaucrat;
+
+class Form{
+
 public:
+		Form(); // Constructeur par défaut
+        Form(const Form& src); // Constructeur de recopie
+		Form(const std::string name, const std::string target, bool isSigned, const int gradeToSign, const int gradeToExec);
+        virtual ~Form(); // Destructeur éventuellement virtuel
+        Form &operator=(const Form&); // Operator d'affectation
 
-    class GradeTooHighException : public std::exception {
-    public:
-        virtual const char* what() const throw();
-    };
+		std::string getName() const;
+		bool getIsSigned() const;
+		int getGradeToSign() const;
+		int getGradeToExec() const;
+		std::string getTarget() const;
+		
+		void validateExecute(Bureaucrat const & executor) const;
+		void beSigned(const Bureaucrat&);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
-    class GradeTooLowException : public std::exception {
-    public:
-        virtual const char* what() const throw();
-    };
-    
-    Form();
-    Form(const std::string& name, int sign, int execute);
-    Form(const Form&);
-    Form& operator=(const Form&);
-    ~Form();
+		class GradeTooHighException: public std::exception{
+		
+		public:
+				virtual const char* what() const throw();
+		};
 
-    const std::string&        getName() const;
-    int                 getSignGrade() const;
-    int                 getExecuteGrade() const;
-    bool                getIsSigned() const;
-    void                beSigned(const Bureaucrat& user);
-
+		class GradeTooLowException: public std::exception{
+		
+		public:
+				virtual const char* what() const throw();
+		};
+		
+		class FormIsNotSignException: public std::exception{
+		
+		public:
+				virtual const char* what() const throw();
+		};
 private:
-    const std::string   _name;
-    bool                _isSigned;
-    const int           _signGrade;
-    const int           _executeGrade;
+		const std::string _name;
+		const std::string _target;
+		bool _isSigned;
+		const int _gradeToSign;
+		const int _gradeToExec;
+
+		void checkGrade() const;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& doc);
+std::ostream& operator<<(std::ostream&, const Form&);
 
-#endif
+#endif // __FORM_H__

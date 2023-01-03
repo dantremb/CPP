@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2023/01/02 20:34:13 by dantremb         ###   ########.fr        #
+#    Updated: 2023/01/02 23:55:56 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@ CC = g++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp Bureaucrat.cpp Form.cpp
+SRCS_FILES = main.cpp \
+			 Bureaucrat.cpp \
+			 Form.cpp \
+			 ShrubberyCreationForm.cpp \
+			 RobotomyRequestForm.cpp \
+			 PresidentialPardonForm.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
