@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:23:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/15 14:09:03 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:14:07 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) : _name("No name"), _type("ClapTrap ") , _hitPoints(10), _energyPoints(10), _attackDamage(0){
 	std::cout << "ClapTrap Default constructor called" << std::endl;

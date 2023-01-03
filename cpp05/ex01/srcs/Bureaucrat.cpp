@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 09:55:27 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/28 15:25:22 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:20:29 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,25 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 Bureaucrat::Bureaucrat() : _name("Nobody"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade) {
-    if (grade < this->_max_grade)
+    if (grade < 1)
         throw GradeTooHighException();
-    if (grade > this->_min_grade)
+    if (grade > 150)
         throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& obj) : _name(obj.getName()), _grade(obj.getGrade()) {
-    if (this->_grade < this->_max_grade)
+    if (this->_grade < 1)
         throw GradeTooHighException();
-    else if (this->_grade > this->_min_grade)
+    else if (this->_grade > 150)
         throw GradeTooLowException();
 	else
     	*this = obj;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj) {
-    if (this->_grade < this->_max_grade)
+    if (this->_grade < 1)
         throw GradeTooHighException();
-    else if (this->_grade > this->_min_grade)
+    else if (this->_grade > 150)
         throw GradeTooLowException();
 	else
    		this->_grade = obj.getGrade();
@@ -60,14 +60,14 @@ std::string Bureaucrat::getName() const {
 }
 
 void Bureaucrat::incrementGrade(int increment) {
-	if (this->_grade - increment < this->_max_grade)
+	if (this->_grade - increment < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade -= increment;
 }
 
 void Bureaucrat::decrementGrade(int decrement) {
-	if (this->_grade + decrement > this->_min_grade)
+	if (this->_grade + decrement > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade += decrement;

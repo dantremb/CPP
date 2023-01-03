@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:23:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/15 14:09:14 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:13:57 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.class.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) : ClapTrap(){
 	this->_name = "No name";

@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 09:51:16 by dantremb          #+#    #+#             */
-/*   Updated: 2022/12/28 13:50:24 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:20:34 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ private:
 
     std::string 	_name;
     int         	_grade;
-	const int		_max_grade = 1;
-	const int		_min_grade = 150;
 
 };
 

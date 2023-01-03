@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2022/12/14 06:49:43 by dantremb         ###   ########.fr        #
+#    Updated: 2023/01/02 11:24:42 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@
 NAME = a.out
 
 # Flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = clang++
 
 # Sources files
 S = srcs/
-SRCS_FILES = main.cpp ClapTrap.class.cpp
+SRCS_FILES = main.cpp ClapTrap.cpp
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
