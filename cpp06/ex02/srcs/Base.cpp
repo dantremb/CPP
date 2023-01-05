@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 09:51:57 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/05 09:51:57 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/05 09:51:53 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:51:53 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <ctime>
 
-#ifndef BASE_HPP
-#define BASE_HPP
-
-#include <iostream>
-
-class A;
-class B;
-class C;
-
-class Base
-{
-	public:
-	virtual ~Base();
-};
-
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
-
-
-#endif
+Base::~Base(){};

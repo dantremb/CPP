@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialise.hpp                                      :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 09:52:23 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/05 09:52:23 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/05 09:51:32 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:51:32 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef A_HPP
+# define A_HPP
 
-#ifndef SERIALISE_HPP
-#define SERIALISE_HPP
-#include <iostream>
+# include "Base.hpp"
 
-struct Data
+class A: public Base
 {
-	int	a = 21;
-	int b = 42;
-	std::string text = "Struct is not empty!";
+	~A();
 };
-
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
 
 #endif

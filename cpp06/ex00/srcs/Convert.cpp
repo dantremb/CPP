@@ -37,8 +37,8 @@ void Convert::printResult() const
 		std::cout << "char : impossible" << std::endl;
 	if (_isNumber){
 	 	std::cout << "int: " << static_cast<int>(this->_nbr)  << std::endl;
-		std::cout << "float: " <<  static_cast<float>(this->_nbr)  << ((static_cast<float>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : " ") << "f" << std::endl;
-		std::cout << "double: " <<  static_cast<double>(this->_nbr)  << ((static_cast<double>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : " ") << std::endl;
+		std::cout << "float: " <<  static_cast<float>(this->_nbr)  << ((static_cast<float>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : "") << "f" << std::endl;
+		std::cout << "double: " <<  static_cast<double>(this->_nbr)  << ((static_cast<double>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : "") << std::endl;
 		return;
 	}
 	std::cout << "int: impossible" << std::endl;

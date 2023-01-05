@@ -16,8 +16,7 @@
 
 int	main(int ac, char **av)
 {
-	if (ac != 2)
-	{
+	if (ac != 2){
 		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
 		return (1);
 	}

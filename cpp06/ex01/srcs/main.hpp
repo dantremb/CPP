@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   Serialise.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 09:51:38 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/05 09:51:38 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/05 09:52:23 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:52:23 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef B_HPP
-#define B_HPP
+#ifndef MAIN_HPP
+# define MAIN_HPP
+# include <iostream>
 
-#include "./Base.hpp"
-
-class B: public Base
+struct Data
 {
-	~B();
+	int	a;
+	std::string text;
 };
 
 #endif
