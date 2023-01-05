@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Serialise.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:02:04 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/20 11:02:04 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:52:23 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:52:23 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SERIALISE_HPP
 #define SERIALISE_HPP

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 21:40:59 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/23 21:40:59 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:50:24 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:50:24 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SPAN_HPP
 #define SPAN_HPP

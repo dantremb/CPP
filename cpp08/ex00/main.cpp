@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 01:53:08 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/23 01:53:08 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:50:02 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:50:02 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "./easyfind.hpp"
 

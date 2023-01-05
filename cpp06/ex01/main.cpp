@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 12:48:55 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/20 12:48:55 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:52:14 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:52:14 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "./Serialise.hpp"
 #include <iostream>

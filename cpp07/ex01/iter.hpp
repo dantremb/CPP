@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 21:52:46 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/21 21:52:46 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:50:54 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:50:54 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef ITER_HPP
 #define ITER_HPP

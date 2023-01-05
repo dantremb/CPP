@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 14:46:51 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/23 01:45:41 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:51:09 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:51:10 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "./Array.hpp"
 

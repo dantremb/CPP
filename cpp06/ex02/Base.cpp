@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 13:15:18 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/20 13:15:18 by stissera         ###   ########.fr       */
+/*   Created: 2023/01/05 09:51:53 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:51:53 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "./Base.hpp"
 #include "./A.hpp"
