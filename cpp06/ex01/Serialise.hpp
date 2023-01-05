@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialise.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/20 11:02:04 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/20 11:02:04 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
+#ifndef SERIALISE_HPP
+#define SERIALISE_HPP
+#include <iostream>
 
-
-int	main(int ac, char **av)
+struct Data
 {
-	if (ac != 2)
-	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
-	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
-}
+	int	a = 21;
+	int b = 42;
+	std::string text = "Struct is not empty!";
+};
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
+
+#endif

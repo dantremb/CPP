@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/20 13:19:45 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/20 13:19:45 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
+#ifndef C_HPP
+#define C_HPP
 
+#include "./Base.hpp"
 
-int	main(int ac, char **av)
+class C: public Base
 {
-	if (ac != 2)
-	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
-	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
-}
+	~C();
+};
+
+#endif

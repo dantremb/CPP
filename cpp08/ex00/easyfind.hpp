@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/23 01:55:03 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/23 01:55:03 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+#include <iostream>
+#include <list>
+#include <algorithm>
+#include <vector>
 
+template<typename T> void easyfind(T&, int);
 
-int	main(int ac, char **av)
-{
-	if (ac != 2)
-	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
-	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
-}
+#include "./easyfind.tpp"
+#endif

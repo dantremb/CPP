@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/23 01:55:36 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/23 01:55:36 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
+#include "./easyfind.hpp"
 
-
-int	main(int ac, char **av)
+template<typename T> void easyfind(T &array, int nbr)
 {
-	if (ac != 2)
+	typename T::iterator result = std::find(array.begin(), array.end(), nbr);
+	if (result != array.end())
 	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
+		std::cout << "Number " << *result << " Found!" << std::endl;
+		return ;
 	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
+	throw std::invalid_argument ("Not found!");
 }

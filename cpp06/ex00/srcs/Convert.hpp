@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convert.hpp                                        :+:      :+:    :+:   */
+/*   convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 10:45:51 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/03 11:09:57 by dantremb         ###   ########.fr       */
+/*   Created: 2022/12/17 14:49:33 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/17 14:49:33 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
-
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
 # include <iostream>
+# include <sstream>
 
 class Convert
 {
 	public:
-		Convert();
-		Convert(const Convert&);
-		Convert(const std::string);
-		virtual ~Convert();
-		Convert &operator=(const Convert&);
 
-		void	convertToChar();
-		void	convertToInt();
-		void	convertToFloat();
-		void	convertToDouble();
+		Convert(std::string const&);
+		Convert(Convert const&);
+		~Convert();
+		Convert&	operator=(Convert const&);
+
+		void		printResult() const;
 
 	private:
 
-		std::string		_value;
-		char			_char;
-		int				_int;
-		float			_float;
-		double			_double;
+		std::string	const	_str;
+		long double			_nbr;
+		bool				_isNumber;
+		void				detectType();
 };
-
-std::ostream &operator<<(std::ostream &out, Convert const &src);
 
 #endif

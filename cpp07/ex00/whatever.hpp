@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/21 21:32:07 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/21 21:32:07 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
 
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-int	main(int ac, char **av)
+#include <iostream>
+
+template <typename T>
+void	swap(T &src1, T &src2)
 {
-	if (ac != 2)
-	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
-	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
+	T temp = src1;
+	src1 = src2;
+	src2 = temp;
 }
+template <typename T> T min(T const& first, T const& second) { return (first < second ? first : second); }
+template <typename T> T max(T const& first, T const& second) { return (first > second ? first : second); }
+
+#endif

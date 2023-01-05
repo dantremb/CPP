@@ -5,87 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 10:45:52 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/03 15:28:51 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/04 20:46:46 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/04 20:46:46 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-Convert::Convert() :
-		_char('\0'), 
-		_int(0), 
-		_float(0.0f), 
-		_double(0.0),
-		_value("NULL") {
+Convert::Convert(std::string const& str) :_str(str), _isNumber(false){
+	this->detectType();
 }
 
-Convert::Convert(const Convert& src) :
-		_value(src._value), 
-		_char(src._char), 
-		_int(src._int), 
-		_float(src._float), 
-		_double(src._double) {
+Convert::Convert(Convert const& src) :_str(src._str), _nbr(src._nbr), _isNumber(src._isNumber){
 }
 
-Convert::Convert(const std::string value) :
-		_value(value),
-		_char('\0'),
-		_int(0),
-		_float(0.0f),
-		_double(0.0) {
+Convert::~Convert(){
 }
 
-Convert::~Convert() {
+void	Convert::detectType(){
+	std::stringstream ss;
+	ss << _str;
+	ss >> this->_nbr;
+	ss.fail() ? _isNumber = false : _isNumber = true;
 }
 
-Convert& Convert::operator=(const Convert& src) {
-	if (this != &src)
-	{
-		_value = src._value;
-		_char = src._char;
-		_int = src._int;
-		_float = src._float;
-		_double = src._double;
+void Convert::printResult() const
+{
+	if (_nbr >= 0 && _nbr <= 127 && _isNumber)
+		(_nbr >= 32 && _nbr <= 126)? std::cout << "char : " << static_cast<char>(_nbr) << std::endl : std::cout << "char : Non displayable" << std::endl;
+	else
+		std::cout << "char : impossible" << std::endl;
+	if (_isNumber){
+	 	std::cout << "int: " << static_cast<int>(this->_nbr)  << std::endl;
+		std::cout << "float: " <<  static_cast<float>(this->_nbr)  << ((static_cast<float>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : " ") << "f" << std::endl;
+		std::cout << "double: " <<  static_cast<double>(this->_nbr)  << ((static_cast<double>(this->_nbr) - static_cast<int>(this->_nbr) == 0) ? ".0" : " ") << std::endl;
+		return;
 	}
-	return *this;
-}
-
-void	Convert::convertToChar() {
-	_char = static_cast<char>(_value);
-}
-
-void	Convert::convertToInt() {
-	_int = static_cast<int>(_value);
-}
-
-void	Convert::convertToFloat() {
-	_float = static_cast<float>(_value);
-}
-
-void	Convert::convertToDouble() {
-	_double = static_cast<double>(_value);
-}
-
-std::ostream &operator<<(std::ostream &out, Convert const &src) {
-	if (src._char != '\0')
-		out << "char: " << src._char << std::endl;
-	else
-		out << "char: impossible" << std::endl;
-	
-	if (src._int != 0)
-		out << "int: " << src._int << std::endl;
-	else
-		out << "int: impossible" << std::endl;
-
-	if (src._float != 0.0f)
-		out << "float: " << src._float << std::endl;
-	else
-		out << "float: impossible" << std::endl;
-
-	if (src._double != 0.0)
-		out << "double: " << src._double << std::endl;
-	else
-		out << "double: impossible" << std::endl;
-	return out;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: nanf" << std::endl;
+	std::cout << "double: nan" << std::endl;
 }

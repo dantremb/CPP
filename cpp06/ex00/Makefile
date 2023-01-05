@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
-#    Updated: 2023/01/03 11:05:55 by dantremb         ###   ########.fr        #
+#    Updated: 2023/01/04 20:41:39 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = a.out
 
 # Flags
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 
 # Sources files
@@ -27,7 +27,7 @@ O = objs/
 OBJS= $(SRCS:$S%=$O%.o)
 $O%.o: $S%
 	@printf "$R■$W"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 # Main rule
 all: signature init $(NAME)
@@ -40,7 +40,7 @@ init:
 
 # Creating executable
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(FLAGS) -o $@ $^
 
 # Cleaning
 REMOVE = rm -rf

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stissera <stissera@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 15:51:22 by stissera          #+#    #+#             */
-/*   Updated: 2022/12/19 15:51:22 by stissera         ###   ########.fr       */
+/*   Created: 2022/12/21 21:52:46 by stissera          #+#    #+#             */
+/*   Updated: 2022/12/21 21:52:46 by stissera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "./Convert.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
+#include <iostream>
 
-
-int	main(int ac, char **av)
+template <typename T>
+void	iter(T *addr, size_t stab, void (*fctn)(T const &))
 {
-	if (ac != 2)
-	{
-		std::cout << "Need one argument! ex: " << av[0] << " 12.345f" << std::endl;
-		return (1);
-	}
-	Convert conv(av[1]);
-	conv.printResult();
-	return (0);
+	for (int i = 0; i < static_cast<int>(stab); i++)
+		fctn(addr[i]);
 }
+
+template <typename T> void test(T line) { std::cout << line << std::endl; }
+
+#endif
