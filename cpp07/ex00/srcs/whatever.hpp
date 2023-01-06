@@ -10,21 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+# define WHATEVER_HPP
 
-#include <iostream>
+# include <iostream>
 
-template <typename T>
-void	swap(T &src1, T &src2)
-{
+template <typename T> void	swap(T &src1, T &src2){
 	T temp = src1;
 	src1 = src2;
 	src2 = temp;
 }
-template <typename T> T min(T const& first, T const& second) { return (first < second ? first : second); }
-template <typename T> T max(T const& first, T const& second) { return (first > second ? first : second); }
+
+template <typename T> T min(T const& first, T const& second){ 
+	return (first < second ? first : second); 
+}
+
+template <typename T> T max(T const& first, T const& second) { 
+	return (first > second ? first : second);
+}
 
 #endif

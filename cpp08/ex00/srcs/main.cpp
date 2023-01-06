@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "./easyfind.hpp"
+#include "easyfind.hpp"
 
 int main( void )
 {
 	std::list<int> test;
+
 	test.push_back(55);
 	test.push_back(30);
 	test.push_back(23);

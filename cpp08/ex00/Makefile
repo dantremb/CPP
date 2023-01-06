@@ -1,24 +1,82 @@
-NAME	=	easyfind
-CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow -g
-SRCS	=	main.cpp
-OBJS	=	$(SRCS:.cpp=.o)
-RM		=	rm -rf
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/19 20:03:21 by dantremb          #+#    #+#              #
+#    Updated: 2023/01/05 15:19:18 by dantremb         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all		:	$(NAME)
+# Nom du Projet
+NAME = a.out
 
-%.o: %.cpp
-			$(COMPILE.c) $< $(WARNING) -o $@
+# Flags
+FLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
 
-$(NAME)	:	${OBJS}
-			${CC} ${FLAGS} ${OBJS} -o $@
+# Sources files
+S = srcs/
+SRCS_FILES = main.cpp
+SRCS = $(addprefix $S, $(SRCS_FILES))
 
-clean	:
-			$(RM) $(OBJS)
+# Objects conversion
+O = objs/
+OBJS= $(SRCS:$S%=$O%.o)
+$O%.o: $S%
+	@printf "$R■$W"
+	@$(CC) $(FLAGS) -c $< -o $@
 
-fclean	:	clean
-			$(RM) $(NAME)
+# Main rule
+all: signature init $(NAME)
+	@echo "$G\n$(NAME) Compiled!$W"
 
-re		:	fclean all
+# Initialise librairies and making objs folder
+init:
+	@mkdir -p $O
+	@printf "$CCreating $(NAME)\n$W"
 
-.PHONY	:	all clean fclean re
+# Creating executable
+$(NAME): $(OBJS)
+	@$(CC) $(FLAGS) -o $@ $^
+
+# Cleaning
+REMOVE = rm -rf
+
+clean:
+	@$(REMOVE) $O
+
+fclean: clean
+	@$(REMOVE) $(NAME)
+
+re:	fclean all
+
+# Utilities
+COMMIT = $(shell date "+%d %B %T")
+git:
+	@git add .
+	@git commit -m "$(COMMIT)"
+	@git push
+
+R = $(shell tput -Txterm setaf 1)
+G = $(shell tput -Txterm setaf 2)
+C = $(shell tput -Txterm setaf 6)
+W = $(shell tput -Txterm setaf 7)
+
+signature:
+	@clear
+	@echo "\n$G+---+---+---+---+---+---+---+---+"
+	@echo "$G|$C	$(NAME) by Dantremb	$G|"
+	@echo "$G+---+---+---+---+---+---+---+---+"
+
+test:
+	@echo "----- TESTING ----- DEBUG -----"
+	@./a.out DEBUG
+	@echo "----- TESTING ----- INFO -----"
+	@./a.out INFO
+	@echo "----- TESTING ----- WARNING -----"
+	@./a.out WARNING
+	@echo "----- TESTING ----- ERROR -----"
+	@./a.out ERROR

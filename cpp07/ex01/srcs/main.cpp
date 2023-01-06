@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 09:50:54 by dantremb          #+#    #+#             */
-/*   Updated: 2023/01/05 09:50:54 by dantremb         ###   ########.fr       */
+/*   Created: 2023/01/05 09:50:59 by dantremb          #+#    #+#             */
+/*   Updated: 2023/01/05 09:50:59 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef ITER_HPP
-#define ITER_HPP
-#include <iostream>
+#include "./iter.hpp"
 
-template <typename T>
-void	iter(T *addr, size_t stab, void (*fctn)(T const &))
+int main( void )
 {
-	for (int i = 0; i < static_cast<int>(stab); i++)
-		fctn(addr[i]);
+	std::string tab[3] = {"See","my","list!"};
+	::iter(tab, 3, test);
+	return (0);
 }
-
-template <typename T> void test(T line) { std::cout << line << std::endl; }
-
-#endif

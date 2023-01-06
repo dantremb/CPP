@@ -10,44 +10,48 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef SPAN_HPP
-#define SPAN_HPP
-#include <iostream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
-#include <list>
+# define SPAN_HPP
+
+# include <iostream>
+#include <sys/_types/_size_t.h>
+# include <vector>
+# include <iterator>
+# include <algorithm>
+# include <list>
 
 class Span
 {
 	public:
+
+		class maxNumberException : public std::exception {
+			const char* what() const throw();
+		};
+
+		class lessNumberException : public std::exception {
+			const char* what() const throw();
+		};
+
+		class noDiffException : public std::exception {
+			const char* what() const throw();
+		};
+
 		Span();
 		Span(unsigned int const);
 		Span(Span const&);
 		~Span();
 		Span& operator=(Span const&);
-		void	addNumber(int);
-		int		shortestSpan();
-		int		longestSpan();
-		void	addRandom();
-		void	rangeNumber(std::list<int>::iterator, std::list<int>::iterator);
-		class maxNumberException : public std::exception
-		{
-			const char* what() const throw();
-		};
-		class lessNumberException : public std::exception
-		{
-			const char* what() const throw();
-		};
-		class noDiffException : public std::exception
-		{
-			const char* what() const throw();
-		};
+	
+		void				addNumber(int);
+		int					shortestSpan();
+		int					longestSpan();
+		void				addRandom();
+		void				rangeNumber(std::list<int>::iterator, std::list<int>::iterator);
 
 	private:
-		unsigned int	_max;
-		std::list<int>	_n;
+
+		unsigned int		_max;
+		std::list<int>		_n;
 };
 
 #endif
