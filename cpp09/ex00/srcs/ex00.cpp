@@ -1,0 +1,80 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex00.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/24 13:49:45 by dantremb          #+#    #+#             */
+/*   Updated: 2023/02/25 00:09:32 by dantremb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
+vector<pair<string, float>> ft_fill_container(string filename) {
+    vector<pair<string, float>> container; // create a vector of pairs
+    ifstream file(filename.c_str()); // open the file
+    if (file.is_open()) { // if the file is open
+        string line; // create a string to store the line
+        while (getline(file, line)) { // while we can get a line from the file
+            stringstream ss(line); // create a stringstream from the line
+            string date_str, value_str; // create two strings to store the date and the value
+            getline(ss, date_str, '|'); // get the date from the stringstream
+            getline(ss, value_str, '|'); // get the value from the stringstream
+            date_str.erase(date_str.find_last_not_of(' ') + 1); // remove the trailing spaces from the date
+            value_str.erase(0, value_str.find_first_not_of(' ')); // remove the leading spaces from the value
+            value_str.erase(value_str.find_last_not_of(' ') + 1); // remove the trailing spaces from the value
+            try { // try to convert the value to a float
+                float value = stof(value_str);
+                container.push_back(make_pair(date_str, value)); // add the date and the value to the container
+            } catch (...) {
+                container.push_back(make_pair(date_str, 1001)); // else i use 1001 as a flag
+            }
+        }
+        file.close(); // close the file
+    } else {
+        cout << "Error: could not open file." << endl; // if the file is not open, print an error
+    }
+    return container;
+}
+
+void ft_print_value(const vector<pair<string, float>>& container, const pair<string, float>& input) {
+	if (input.second == 1001) { // if value is 1001, it means that the value is not a float or empty value
+		cout << "Error: bad input => " << input.first << endl;
+	}
+	else if (input.second < 0 ){ // if the value is negative we print the error message
+		cout << "Error: not a positive number." << endl;	
+	}
+	else if (input.second > 1000){ // if the value is greater than 1000 we print the error message
+		cout << "Error: too large a number." << endl;
+	}
+	else { // we look for each date in the container and enter the if statement if the date is found
+		for (vector<pair<string, float>>::const_iterator it = container.begin(); it != container.end(); it++) {
+			if (it->first == input.first) { 
+				cout << input.first << " => " << input.second << " = " << it->second * input.second << endl;
+			}
+		}
+	}
+}
+
+int main(int argc, char **argv) {
+	if (argc == 2) {
+		// Fill container with data from file
+		vector<pair<string, float>> btc_values = ft_fill_container("btc_value.svc");
+		vector<pair<string, float>> input = ft_fill_container(argv[1]);
+		// Itterate from input and print the value for each line
+		for (vector<pair<string, float>>::iterator it = input.begin(); it != input.end(); it++) {
+			ft_print_value(btc_values, *it);
+		}
+	}
+	else { // if no file is given as argument
+		cout << "Error: could not open file." << endl;
+	}
+    return 0;
+}
