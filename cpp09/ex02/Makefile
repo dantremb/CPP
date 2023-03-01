@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/01 15:11:51 by dantremb          #+#    #+#              #
-#    Updated: 2023/03/01 15:11:52 by dantremb         ###   ########.fr        #
+#    Created: 2023/03/01 15:11:42 by dantremb          #+#    #+#              #
+#    Updated: 2023/03/01 15:25:44 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	RPN
+NAME	=	PmergeMe
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow -g
-SRCS	=	main.cpp RPN.cpp
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
+SRCS	=	main.cpp PmergeMe.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 RM		=	rm -rf
 

@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:49:45 by dantremb          #+#    #+#             */
-/*   Updated: 2023/02/27 12:18:41 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:53:07 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void ft_print_value(const std::vector<std::pair<std::string, float> >& container
 	}
 }
 
-void btc_main(int argc, char **argv) {
+int main(int argc, char **argv) {
 	if (argc == 2) {
 		// Fill container with data from file
 		std::vector<std::pair<std::string, float> > btc_values = ft_fill_container("btc_value.svc");

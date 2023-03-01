@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 12:19:55 by dantremb          #+#    #+#             */
-/*   Updated: 2023/02/27 13:01:31 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:41:57 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 # define RPN_HPP
 
 #include <iostream>
-#include <list>
 #include <string>
+#include <stack>
 
 class RPN
 {
 	public:
-		RPN();
-		RPN(char *str);
+		RPN(void);
 		RPN(RPN const &src);
-		~RPN();
-
+		~RPN(void);
+		void	DoCalculation(char *av);
 		RPN &operator=(RPN const &rhs);
-		void calculate();
 
 	private:
+		std::stack<float>  _stack;
 
-		char	*_str;
 };
 
 #endif
